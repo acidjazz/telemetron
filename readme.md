@@ -60,6 +60,11 @@ yarn api
 * visit `http://localhost:3000/` to view the data and links to the API endpoints
 
 
+### API only
+* just solely run `yarn api` and then visit http://localhost:8000/ for a route dump
+* endpoints are `http://localhost:8000/api/flight` and `http://localhost:8000/api/flight/{id}`
+
+
 ## technology stack
 <p align="center">
   <a href="https://laravel.com"><img src="https://onecentlin.gallerycdn.vsassets.io/extensions/onecentlin/laravel-extension-pack/0.4.0/1534522609664/Microsoft.VisualStudio.Services.Icons.Default"  width="128" height="128"/></a>
