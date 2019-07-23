@@ -3,6 +3,9 @@
 > telemetries test case
 
 ### installation
+
+* create a database `telemetron` on your local mysql server
+
 * clone from github
 ```bash
 git clone git@github.com:acidjazz/telemetron.git
@@ -23,8 +26,6 @@ cp .env.example .env
 yarn logs; yarn mdi
 ```
 
-* create a database `telemetron` on your local mysql server
-
 * run a fresh migration to get your db populated
 ```bash
 ./artisan migrate:fresh
@@ -33,6 +34,11 @@ yarn logs; yarn mdi
 * import the json files via the console command
 ```bash
 ./artisan process:json
+```
+
+* above commands TL:DR;
+```bash
+git clone git@github.com:acidjazz/telemetron.git; cd telemetron/; yarn; composer install; cp .env.example .env; yarn logs; yarn mdi; ./artisan migrate:fresh; ./artisan process:json;
 ```
 
 * run the front end and backend processes (preferably in seperate terminals)
