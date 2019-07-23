@@ -4,12 +4,17 @@
 
 ### installation
 * clone from github
-
 ```bash
 git clone git@github.com:acidjazz/telemetron.git
 ```
-
 * run `yarn` and `composer install` to install all of your deps
+
+```bash
+cd telemetron
+yarn
+composer install
+```
+
 * copy `.env.example` to `.env` and configure it to your likings
   * i do this to speed up reactivity and compilation time
 * running `yarn mdi` will copy all the fonts and css to `resources/static/`
