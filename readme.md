@@ -2,6 +2,14 @@
 # telemetron
 > telemetries test case
 
+
+### requirements
+* php v7.x
+* Mysql v5.7+
+* composer (global install perfered)
+* node v12.x (for frontend only)
+* yarn v1.16.x (for frontend only)
+
 ### installation
 
 * create a database `telemetron` on your local mysql server
@@ -66,5 +74,5 @@ yarn api
   <a href="https://materialdesignicons.com"><img src="https://lh3.googleusercontent.com/kellzw4-4Q258D_HdHvcclbu2HEheO1TxauO4lmI5T6tCDnk8pvUfh0W0WpvKiB54g=s96-rw" width="92" height="92" /></a>
 </p>
 
-[laranuxt](https:/github.com/acidjazz/laranuxt)
+[laranuxt](https://github.com/acidjazz/laranuxt)
 
