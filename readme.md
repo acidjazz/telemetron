@@ -4,7 +4,9 @@
 
 ### installation
 * clone from github
+
 `git clone git@github.com:acidjazz/telemetron.git`
+
 * run `yarn` and `composer install` to install all of your deps
 * copy `.env.example` to `.env` and configure it to your likings
   * i do this to speed up reactivity and compilation time
