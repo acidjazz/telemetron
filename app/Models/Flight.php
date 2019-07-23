@@ -39,22 +39,20 @@ class Flight extends Model
             return $geo;
     }
 
-    private function distance($lat1, $lon1, $lat2, $lon2) {
-      if (($lat1 == $lat2) && ($lon1 == $lon2)) {
-        return 0;
-      } else {
-        $theta = $lon1 - $lon2;
-        $dist = sin(deg2rad($lat1))
-            * sin(deg2rad($lat2))
-            + cos(deg2rad($lat1))
-            * cos(deg2rad($lat2))
-            * cos(deg2rad($theta));
-        $dist = acos($dist);
-        $dist = rad2deg($dist);
-        $miles = $dist * 60 * 1.1515;
-        $meters = $miles * 1609.34;
-        return $meters;
-      }
+    private function distance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $earthRadius = 6371000)
+    {
+        // convert from degrees to radians
+        $latFrom = deg2rad($latitudeFrom);
+        $lonFrom = deg2rad($longitudeFrom);
+        $latTo = deg2rad($latitudeTo);
+        $lonTo = deg2rad($longitudeTo);
+
+        $latDelta = $latTo - $latFrom;
+        $lonDelta = $lonTo - $lonFrom;
+
+        $angle = 2 * asin(sqrt(pow(sin($latDelta / 2), 2) +
+        cos($latFrom) * cos($latTo) * pow(sin($lonDelta / 2), 2)));
+        return $angle * $earthRadius;
     }
 
     public function getDistanceAttribute()
@@ -74,7 +72,6 @@ class Flight extends Model
             $prev_lat = $location['location']->getLat();
             $prev_lng = $location['location']->getLng();
         }
-
         return $distance;
     }
 
