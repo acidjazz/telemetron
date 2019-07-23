@@ -10,9 +10,7 @@ git clone git@github.com:acidjazz/telemetron.git
 * run `yarn` and `composer install` to install all of your deps
 
 ```bash
-cd telemetron
-yarn
-composer install
+cd telemetron/; yarn; composer install
 ```
 
 * copy `.env.example` to `.env` and configure it to your likings
@@ -22,11 +20,20 @@ cp .env.example .env
 
 * run `yarn logs` to create laravels needed storage and `yarn mdi` to copy over the icons file
 ```bash
-yarn logs; yarn mdi;
+yarn logs; yarn mdi
 ```
 
-* create a database `telemetron` in your mysql database
+* create a database `telemetron` on your local mysql server
 
+* run a fresh migration to get your db populated
+```bash
+./artisan migrate:fresh
+```
+
+* import the json files via the console command
+```bash
+./artisan process:json
+```
 
 ## technology stack
 <p align="center">
