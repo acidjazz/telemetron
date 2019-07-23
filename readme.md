@@ -2,6 +2,17 @@
 # telemetron
 > telemetries test case
 
+### installation
+* clone from github
+`git clone git@github.com:acidjazz/telemetron.git`
+* run `yarn` and `composer install` to install all of your deps
+* copy `.env.example` to `.env` and configure it to your likings
+  * i do this to speed up reactivity and compilation time
+* running `yarn mdi` will copy all the fonts and css to `resources/static/`
+* run `yarn logs` to create laravels needed storage logs folders
+
+
+
 ## technology stack
 <p align="center">
   <a href="https://laravel.com"><img src="https://onecentlin.gallerycdn.vsassets.io/extensions/onecentlin/laravel-extension-pack/0.4.0/1534522609664/Microsoft.VisualStudio.Services.Icons.Default"  width="128" height="128"/></a>
@@ -16,35 +27,5 @@
   <a href="https://materialdesignicons.com"><img src="https://lh3.googleusercontent.com/kellzw4-4Q258D_HdHvcclbu2HEheO1TxauO4lmI5T6tCDnk8pvUfh0W0WpvKiB54g=s96-rw" width="92" height="92" /></a>
 </p>
 
-## laravel + nuxt.js boilerplate
+[laranuxt](https:/github.com/acidjazz/laranuxt)
 
-### what is included
-
-* [NUXT](https://nuxtjs.org) for our SPA vue.js powered front-end
-  * [@nuxtjs/axios](https://github.com/nuxt-community/axios-module) to communicate with our API
-  * [@nuxtjs/proxy](https://github.com/nuxt-community/proxy-module) sending `/api` to Laravel
-  * [@nuxtjs/tailwindcss](https://github.com/nuxt-community/nuxt-tailwindcss) a [utility-first](https://tailwindcss.com) framework
-  * [mdi](https://materialdesignicons.com) - material design icons with a ton of contributed ones as well
-
-* [Laravel](https://laravel.com) - for our API
-  * [metapi](https://github.com/acidjazz/metapi) - API helpers and utilities
-  * [debugbar](https://github.com/barryvdh/laravel-debugbar) - awesome debugbar for our API
-
-### installation
-
-* clone from github
-* run `yarn` and `composer install` to install all of your deps
-* copy `.env.example` to `.env` and configure it to your likings
-  * i do this to speed up reactivity and compilation time
-* running `yarn mdi` will copy all the fonts and css to `resources/static/`
-* run `yarn logs` to create laravels needed storage logs folders
-
-#### TL;DR
-`git clone git@github.com:acidjazz/telemetron.git; cd telemetron; yarn; composer install; yarn mdi; cp .env.example .env; yarn logs;`
-
-### running your dev environment
-* run `yarn api` (alias for `./artisan serve`) in another terminal for our laravel API
-* run `yarn dev` in one terminal for our nuxt dev setup
-
-### byobu
-I've also included a simple [byobu](http://byobu.co/) script that starts everything up, just change `PROJECT` to your project folder name 
