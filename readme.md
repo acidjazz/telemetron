@@ -16,10 +16,16 @@ composer install
 ```
 
 * copy `.env.example` to `.env` and configure it to your likings
-  * i do this to speed up reactivity and compilation time
-* running `yarn mdi` will copy all the fonts and css to `resources/static/`
-* run `yarn logs` to create laravels needed storage logs folders
+```bash
+cp .env.example .env
+```
 
+* run `yarn logs` to create laravels needed storage and `yarn mdi` to copy over the icons file
+```bash
+yarn logs; yarn mdi;
+```
+
+* create a database `telemetron` in your mysql database
 
 
 ## technology stack
