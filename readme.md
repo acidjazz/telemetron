@@ -35,6 +35,19 @@ yarn logs; yarn mdi
 ./artisan process:json
 ```
 
+* run the front end and backend servers in seperate terminal windows
+```bash
+yarn dev
+```
+
+```bash
+yarn api
+```
+
+* visit `http://localhost:3000/` to view the data and links to the API endpoints
+
+
+
 ## technology stack
 <p align="center">
   <a href="https://laravel.com"><img src="https://onecentlin.gallerycdn.vsassets.io/extensions/onecentlin/laravel-extension-pack/0.4.0/1534522609664/Microsoft.VisualStudio.Services.Icons.Default"  width="128" height="128"/></a>
