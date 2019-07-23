@@ -12,6 +12,7 @@
         "acidjazz/metapi": "^1.3",
         "barryvdh/laravel-debugbar": "^3.2",
         "fideloper/proxy": "^4.1",
+        "grimzy/laravel-mysql-spatial": "^2.1",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0"
     },

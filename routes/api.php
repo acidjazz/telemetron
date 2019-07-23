@@ -13,5 +13,5 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/example', 'Controller@example')->name('example route');
+Route::apiResource('flight', 'FlightCOntroller');
 Route::get('/', 'Controller@routes')->name('route information');

@@ -3,12 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Flight;
-use App\Models\Battery;
 
-class Aircraft extends Model
+use App\Models\Flight;
+
+class Drain extends Model
 {
-    protected $fillable = ['name', 'sn'];
+    protected $fillable = ['battery_id', 'percent', 'temperature'];
 
     public function flight()
     {
