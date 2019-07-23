@@ -35,7 +35,7 @@ yarn logs; yarn mdi
 ./artisan process:json
 ```
 
-* run the front end and backend servers in seperate terminal windows
+* run the front end and backend processes (preferably in seperate terminals)
 ```bash
 yarn dev
 ```
@@ -43,9 +43,7 @@ yarn dev
 ```bash
 yarn api
 ```
-
 * visit `http://localhost:3000/` to view the data and links to the API endpoints
-
 
 
 ## technology stack
