@@ -43,6 +43,7 @@ class Flights extends Migration
             $table->uuid('flight_id');
             $table->foreign('flight_id')->references('id')->on('flights')->onDelete('cascade');
             $table->point('location')->nullable();
+            $table->decimal('alt', 8, 2);
             $table->timestamps();
         });
 

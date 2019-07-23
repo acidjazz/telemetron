@@ -44,37 +44,9 @@ class ProcessJson extends Command
      */
     public function handle()
     {
-
         foreach (range(1, 3) as $num) {
             $this->process(json_decode(file_get_contents("./database/seeds/flight-${num}.json"), true));
         }
-        /*
-        $json = json_decode(file_get_contents('./database/seeds/flight-1.json'), true);
-
-        $flight = new Flight([
-            'id' => $json['uuid'],
-            'name' => $json['aircraft_name'],
-            'sn' => $json['aircraft_sn'],
-        ]);
-        $flight->save();
-
-        foreach ($json['batteries'] as $battery) {
-            (new Battery([
-                'flight_id' => $json['uuid'],
-                'name' => $battery['battery_name'],
-                'sn' => $battery['battery_sn'],
-            ]))->save();
-        }
-
-        foreach ($json['frames'] as $frame) {
-            (new Frame([
-                'flight_id' => $json['uuid'],
-                'location' => new Point($frame['lat'], $frame['long']),
-                'created_at' => Carbon::createFromTimestamp($frame['timestamp']),
-            ]))->save();
-        }
-         */
-
     }
 
     public function process($json)
@@ -105,6 +77,7 @@ class ProcessJson extends Command
                 (new Location([
                     'flight_id' => $json['uuid'],
                     'location' => new Point($frame['lat'], $frame['long']),
+                    'alt' => $frame['alt'],
                     'created_at' => Carbon::createFromTimestamp($frame['timestamp']),
                 ]))->save();
             }

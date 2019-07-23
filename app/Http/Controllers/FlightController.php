@@ -37,7 +37,7 @@ class FlightController extends Controller
      */
     public function show(Flight $flight)
     {
-        return $this->render($flight->load(['batteries', 'batteries.drains', 'locations']));
+        return $this->render($flight->append(['distance'])->load(['batteries', 'batteries.drains', 'locations']));
     }
 
     /**

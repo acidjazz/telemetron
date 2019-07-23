@@ -14,7 +14,8 @@
         "fideloper/proxy": "^4.1",
         "grimzy/laravel-mysql-spatial": "^2.1",
         "laravel/framework": "5.8.*",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "spatie/geocoder": "^3.5"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
