@@ -14,7 +14,7 @@
 
 * create a database `telemetron` on your local mysql server
 
-* full install TL:DR;
+* full install TL:DR; (skip to running environment)
 ```bash
 git clone git@github.com:acidjazz/telemetron.git; cd telemetron/; yarn; composer install; cp .env.example .env; yarn logs; yarn mdi; ./artisan migrate:fresh; ./artisan process:json; yarn apicache;
 ```
@@ -47,6 +47,8 @@ yarn logs; yarn mdi
 ```bash
 ./artisan process:json
 ```
+
+### running the environment
 
 * run the front end and backend processes (preferably in seperate terminals)
 ```bash
