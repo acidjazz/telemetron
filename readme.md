@@ -14,6 +14,10 @@
 
 * create a database `telemetron` on your local mysql server
 
+* full install TL:DR;
+```bash
+git clone git@github.com:acidjazz/telemetron.git; cd telemetron/; yarn; composer install; cp .env.example .env; yarn logs; yarn mdi; ./artisan migrate:fresh; ./artisan process:json; yarn apicache;
+```
 * clone from github
 ```bash
 git clone git@github.com:acidjazz/telemetron.git
@@ -42,11 +46,6 @@ yarn logs; yarn mdi
 * import the json files via the console command
 ```bash
 ./artisan process:json
-```
-
-* above commands TL:DR;
-```bash
-git clone git@github.com:acidjazz/telemetron.git; cd telemetron/; yarn; composer install; cp .env.example .env; yarn logs; yarn mdi; ./artisan migrate:fresh; ./artisan process:json;
 ```
 
 * run the front end and backend processes (preferably in seperate terminals)
