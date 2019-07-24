@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-use App\Models\Battery;
+use App\Models\Drain;
 use App\Models\Location;
 use Spatie\Geocoder\Facades\Geocoder;
 use Carbon\Carbon;
@@ -19,14 +19,34 @@ class Flight extends Model
 
     public $incrementing = false;
 
-    public function batteries()
+    public function drains()
     {
-        return $this->hasMany(Battery::class);
+        return $this->hasMany(Drain::class);
     }
 
     public function getLocationCountAttribute()
     {
         return $this->locations()->count();
+    }
+    public function getDrainCountAttribute()
+    {
+        return $this->drains()->count();
+    }
+    public function getMaxTempAttribute()
+    {
+        return $this->drains()->max('temperature');
+    }
+    public function getMinTempAttribute()
+    {
+        return $this->drains()->min('temperature');
+    }
+    public function getMaxPercentAttribute()
+    {
+        return $this->drains()->max('percent');
+    }
+    public function getMinPercentAttribute()
+    {
+        return $this->drains()->min('percent');
     }
 
     private function getGeo($location)

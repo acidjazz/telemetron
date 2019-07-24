@@ -24,15 +24,15 @@ class Flights extends Migration
             $table->bigIncrements('id');
             $table->uuid('flight_id');
             $table->foreign('flight_id')->references('id')->on('flights')->onDelete('cascade');
-            $table->string('name');
-            $table->string('sn');
             $table->timestamps();
         });
 
         Schema::create('drains', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('battery_id')->unsigned();
-            $table->foreign('battery_id')->references('id')->on('batteries')->onDelete('cascade');
+            $table->uuid('flight_id');
+            $table->foreign('flight_id')->references('id')->on('flights')->onDelete('cascade');
+            $table->string('name');
+            $table->string('sn');
             $table->decimal('percent', 4, 2);
             $table->decimal('temperature', 8, 2);
             $table->timestamps();
@@ -57,7 +57,6 @@ class Flights extends Migration
     public function down()
     {
         Schema::dropIfExists('flights');
-        Schema::dropIfExists('batteries');
         Schema::dropIfExists('drains');
         Schema::dropIfExists('locations');
     }

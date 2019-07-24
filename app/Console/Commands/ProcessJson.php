@@ -5,7 +5,6 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Carbon\Carbon;
 use App\Models\Flight;
-use App\Models\Battery;
 use App\Models\Drain;
 use App\Models\Location;
 use App\Models\Useage;
@@ -61,14 +60,6 @@ class ProcessJson extends Command
         ]);
         $flight->save();
 
-        foreach ($json['batteries'] as $battery) {
-            (new Battery([
-                'flight_id' => $json['uuid'],
-                'name' => $battery['battery_name'],
-                'sn' => $battery['battery_sn'],
-            ]))->save();
-        }
-
         $bar = $this->output->createProgressBar(count($json['frames']));
         $bar->start();
 
@@ -82,9 +73,11 @@ class ProcessJson extends Command
                 ]))->save();
             }
             if ($frame['type'] === 'battery') {
-                $battery = Battery::where('sn',$frame['battery_sn'])->first();
+                dump($json['uuid']);
                 (new Drain([
-                    'battery_id' => $battery->id,
+                    'flight_id' => $json['uuid'],
+                    'name' => $json['batteries'][0]['battery_name'],
+                    'sn' => $frame['battery_sn'],
                     'percent' => $frame['battery_percent'],
                     'temperature' => $frame['battery_temperature'],
                     'created_at' => Carbon::createFromTimestamp($frame['timestamp']),

@@ -14,7 +14,7 @@ class FlightController extends Controller
      */
     public function index()
     {
-        $flights = Flight::with(['batteries']);
+        $flights = Flight::with(['drains']);
         return $this->render($this->paginate($flights));
     }
 
@@ -37,7 +37,9 @@ class FlightController extends Controller
      */
     public function show(Flight $flight)
     {
-        $flight->load(['batteries', 'batteries.drains', 'locations'])->append('distance');
+        $flight
+            ->load(['drains', 'locations', 'locationFirst', 'locationLast'])
+            ->append(['distance', 'location_count', 'drain_count', 'max_temp', 'min_temp', 'max_percent', 'min_percent']);
         return $this->render($flight);
     }
 

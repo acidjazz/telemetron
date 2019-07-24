@@ -8,7 +8,7 @@ use App\Models\Flight;
 
 class Drain extends Model
 {
-    protected $fillable = ['battery_id', 'percent', 'temperature'];
+    protected $fillable = ['flight_id', 'name', 'sn', 'percent', 'temperature'];
 
     public function flight()
     {
