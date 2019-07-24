@@ -73,7 +73,6 @@ class ProcessJson extends Command
                 ]))->save();
             }
             if ($frame['type'] === 'battery') {
-                dump($json['uuid']);
                 (new Drain([
                     'flight_id' => $json['uuid'],
                     'name' => $json['batteries'][0]['battery_name'],
