@@ -7,7 +7,7 @@
       span API Endpoint
       span &nbsp;
       span.font-bold {{ `/api/flight/${$route.params.id}` }}
-    .my-4.p-4.border.border-gray.rounded(v-if="flight")
+    .my-4.p-4.border.border-gray.rounded.ani-sib(v-if="flight")
       .flex.p-1
         .font-bold.mr-2 distance:
         .text {{ flight.distance | numeral }} meters
@@ -35,7 +35,7 @@
           FormatDateRange(
             :start="moment(flight.location_first.created_at)"
             :end="moment(flight.location_last.created_at)")
-  .m-4.p-4.border.border-blue-200.rounded.bg-blue-100(v-if="flight")
+  .m-4.p-4.border.border-blue-200.rounded.bg-blue-100.ani-sib.ani-d-2(v-if="flight")
     pre {{ flight }}
 </template>
 

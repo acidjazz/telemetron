@@ -1,17 +1,17 @@
 <template lang="pug">
 .container.p-8
   .m-4
-    a.border.border-gray.rounded.text-blue-500.px-4.py-2.mb-4(target="_new",href="http://localhost:3000/api/flight")
+    a.button.mb-4(target="_new",href="http://localhost:3000/api/flight")
       i.mdi.mdi-settings.mr-2
       span API Endpoint
       span &nbsp;
       span.font-bold /api/flight
   .flex.flex-wrap.-py-4(v-if="flights")
     .w-full.lg_w-1_3.p-4(v-for="flight, index in flights")
-      .p-2.border.border-gray.rounded
-        .flex.p-2
+      .p-2.border.border-gray.rounded.shadow.hover_shadow-lg.tran-shadow.ani-sil(:class="`ani-d-${index+1}`")
+        .flex.p-2.items-center
           .font-bold.mr-2 id:
-          nuxt-link.text.text-blue-500(:to="`/flight/${flight.id}`") {{ flight.id }}
+          nuxt-link.button(:to="`/flight/${flight.id}`") {{ flight.id }}
         .flex.p-2
           .font-bold.mr-2 duration:
           .text {{ flight.duration | moment }}
@@ -25,7 +25,7 @@
           GoogleMapImage(:lat="flight.takeOff.lat",:lng="flight.takeOff.lng")
   .p-8.m-8(v-else)
     span Loading..
-  .m-4.p-4.border.border-blue-200.rounded.bg-blue-100(v-if="flights")
+  .m-4.p-4.border.border-blue-200.rounded.bg-blue-100(v-if="flights").ani-sib.ani-d-5
     pre.overflow-hidden {{ flights }}
 </template>
 
